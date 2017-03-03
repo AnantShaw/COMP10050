@@ -1,5 +1,6 @@
 #include<string.h>
 #include <stdio.h>
+
 typedef struct Player{
 	char name[20];
 	char type[6];
