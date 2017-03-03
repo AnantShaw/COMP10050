@@ -1,16 +1,29 @@
+#include<string.h>
 #include <stdio.h>
-
+typedef struct Player{
+	char name[20];
+	char type[6];
+	int life;
+}player;
+player players[6];
 int main(void) 
 {
-	int input;
-	int a,b;
-	// Hannah Asks the user to input a set of players (max 6). For each player the user has to select a type (Elf, Human, Ogre, Wizard) and input a name.
+	int input=0, numplayers=0;
+	char name[20];
+// Hannah Asks the user to input a set of players (max 6). 
    printf("Please input  number of players 2-6");
-   scanf ("d%", &input);
+   scanf ("%d", &input);
    while (input <2 || input > 6){
    printf("Input is invaid, Please input  number of players 2-6");
-   scanf ("d%", &input);
+   scanf ("%d", &input);
+   }	
+
+//input a name.
+for (numplayers=0;numplayers >= 0 && numplayers < input; ++numplayers){
+	printf("Please input name for player %d", numplayers+1);
+	scanf("%s", &players[numplayers].name);
    }
+//For each player the user has to select a type (Elf, Human, Ogre, Wizard) 
   // Hannah Each player will be represented as a struct characterised by the fields identifying the player (player type and player name), life points, and the fields characterising the player capabilities (Smartness, Strength, Magic Skills, Luck and Dexterity). 
   // Hannah The life points are represented as an integer initially set to 100. 
  
