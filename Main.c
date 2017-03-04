@@ -1,5 +1,18 @@
 #include<string.h>
-#include <stdio.h>
+#include<stdio.h>
+#include<math.h>
+#include<math.h>
+enum slotname {ground, hill, city};
+
+struct slottype
+{
+char slotType[20];
+};
+
+struct slotnumber
+{
+int slotNumber[20];
+};
 
 typedef struct Player{
 	char name[20];
@@ -9,6 +22,16 @@ typedef struct Player{
 player players[6];
 int main(void) 
 {
+	enum slotname now;
+	struct slottype ptype;
+	struct slotnumber snumber;
+	srand( time(NULL) );
+	for(int i=0;i<20; i++)
+	{ 
+  		int b=rand()%3;
+        ptype.slotType[i]=b;
+        printf("%d\n",b);
+        }
 	int input=0, numplayers=0;
 	char name[20];
 // Hannah Asks the user to input a set of players (max 6). 
