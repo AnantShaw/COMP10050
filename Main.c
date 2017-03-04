@@ -18,6 +18,7 @@ typedef struct Player{
 	char name[20];
 	char type[6];
 	int life=100;
+	int assignedslot;
 }player;
 player players[6];
 int main(void) 
