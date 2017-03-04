@@ -42,7 +42,8 @@ int main(void)
    }	
 
 //input a name.
-for (numplayers=0;numplayers >= 0 && numplayers < input; ++numplayers){
+for (numplayers=0;numplayers<input;++numplayers)
+   {
 	printf("Please input name for player %d", numplayers+1);
 	scanf("%s", &players[numplayers].name);
    }
