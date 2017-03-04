@@ -18,39 +18,62 @@ typedef struct Player{
 	char name[20];
 	char type[6];
 	int life=100;
-	int assignedslot;
+	int assignedslotnumber;
+	char assignedslottype[10];
 }player;
 player players[6];
 int main(void) 
-{
+{       
 	struct slottype ptype;
 	struct slotnumber snumber;
 	srand( time(NULL) );
 	for(int i=0;i<20; i++)
 	{ 
   		int b=rand()%3;
-        ptype.slotType[i]=b;
-        printf("%d\n",b);
+        	ptype.slotType[i]=b;
+        	printf("%d\n",b);
         }
 	int input=0, numplayers=0;
 	char name[20];
 // Hannah Asks the user to input a set of players (max 6). 
-   printf("Please input  number of players 2-6");
-   scanf ("%d", &input);
-   while (input <2 || input > 6){
-   printf("Input is invaid, Please input  number of players 2-6");
-   scanf ("%d", &input);
-   }	
+   	printf("Please input  number of players 2-6");
+   	scanf ("%d", &input);
+   	while (input <2 || input > 6)
+	{
+   	printf("Input is invaid, Please input  number of players 2-6");
+   	scanf ("%d", &input);
+        }	
 
 //input a name.
-for (numplayers=0;numplayers<input;numplayers++)
-   {
-	printf("Please input name for player %d", numplayers+1);
-	scanf("%s", &players[numplayers].name);
-   }
+	for(numplayers=0;numplayers<input;numplayers++)
+   	{
+		printf("Please input name for player %d", numplayers+1);
+		scanf("%s", &players[numplayers].name);
+   	}
  	printf("Enter the number of slots you want to play with:\n");
 	int slotamount=0;
 	scanf("%d",&slotamount);
+	int arr={100,101,102,103,104,105}; int i=0; int flag=0;
+	while(i<input)
+	{       
+		int v=rand()%slotamount;
+		for(int j=0;j<6;j++)
+		{
+			if(arr[j]==v)
+			{
+				flag++;
+			}
+		}
+		if(flag==0)
+		{
+			arr[i]=v;
+			players[i].assignedslotnumber=v;
+			i++;
+		}
+		flag=0;
+	}
+		
+	
 //For each player the user has to select a type (Elf, Human, Ogre, Wizard) 
   // Hannah Each player will be represented as a struct characterised by the fields identifying the player (player type and player name), life points, and the fields characterising the player capabilities (Smartness, Strength, Magic Skills, Luck and Dexterity). 
   // Hannah The life points are represented as an integer initially set to 100. 
