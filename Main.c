@@ -17,7 +17,7 @@ int slotNumber[20];
 typedef struct Player{
 	char name[20];
 	char type[6];
-	int life;
+	int life=100;
 }player;
 player players[6];
 int main(void) 
