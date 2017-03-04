@@ -48,6 +48,9 @@ for (numplayers=0;numplayers<input;numplayers++)
 	printf("Please input name for player %d", numplayers+1);
 	scanf("%s", &players[numplayers].name);
    }
+ 	printf("Enter the number of slots you want to play with:\n");
+	int slotamount=0;
+	scanf("%d",&slotamount);
 //For each player the user has to select a type (Elf, Human, Ogre, Wizard) 
   // Hannah Each player will be represented as a struct characterised by the fields identifying the player (player type and player name), life points, and the fields characterising the player capabilities (Smartness, Strength, Magic Skills, Luck and Dexterity). 
   // Hannah The life points are represented as an integer initially set to 100. 
