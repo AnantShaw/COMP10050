@@ -22,7 +22,6 @@ typedef struct Player{
 player players[6];
 int main(void) 
 {
-	enum slotname now;
 	struct slottype ptype;
 	struct slotnumber snumber;
 	srand( time(NULL) );
