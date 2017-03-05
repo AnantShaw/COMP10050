@@ -78,6 +78,14 @@ int main(void)
 			players[numplayers].strength=rand()%51;
 			players[numplayers].dexterity=rand()%100;
 		}
+		if(players[numplayers].type[0]=='W' || players[numplayers].type[0]=='w')
+		{
+			players[numplayers].magicskills=rand()%(100+1-80)+80;
+			players[numplayers].smartness=rand()%(100+1-90)+90;
+			players[numplayers].luck=rand()%(100+1-50)+50;
+			players[numplayers].strength=rand()%21;
+			players[numplayers].dexterity=rand()%100;
+		}
    	}
  	printf("Enter the number of slots you want to play with:\n");
 	int slotamount=0;
