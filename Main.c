@@ -72,9 +72,11 @@ int main(void)
 		}
 		flag=0;
 	}
-	for(int f=0;f<6;f++)
+	for(int f=0;f<input;f++)
 	{
-		for(int 
+		for(int l=(players[f].assignedslotnumber)-1;l<=(players[j].assignedslotnumber)+1;l++)
+		{
+			
 		
 	
 //For each player the user has to select a type (Elf, Human, Ogre, Wizard) 
