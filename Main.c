@@ -18,8 +18,13 @@ typedef struct Player{
 	char name[20];
 	char type[6];
 	int life=100;
+	int smartness=0;
+	int strength=0;
+	int magicskills=0;
+	int luck=0;
+	int dexterity=0;
 	int assignedslotnumber;
-	char assignedslottype[10];
+	
 }player;
 player players[6];
 int main(void) 
@@ -47,8 +52,24 @@ int main(void)
 //input a name.
 	for(numplayers=0;numplayers<input;numplayers++)
    	{
-		printf("Please input name for player %d", numplayers+1);
-		scanf("%s", &players[numplayers].name);
+		printf("Please input name and type for player %d", numplayers+1);
+		scanf("%s%s", &players[numplayers].name,&players[numplayers].type);
+		if(players[numplayers].type[0]=='O' || players[numplayers].type[0]=='o')
+		{
+			players[numplayers].magicskills=0;
+			players[numplayers].smartness=rand()%20;
+			players[numplayers].luck=rand()%(50-players[numplayers].smartness);
+			players[numplayers].strength=rand()%(100+1-80)+80;
+			players[numplayers].dexterity=rand()%(100+1-80)+80;
+		}
+		if(players[numplayers].type[0]=='H' || players[numplayers].type[0]=='h')
+		{
+			players[numplayers].magicskills=rand()%300;
+			players[numplayers].smartness=rand()%(300-players[numplayers].magicskills);
+			players[numplayers].luck=rand()%(300-(players[numplayers].magicskills+players[numplayers].smartness));
+			players[numplayers].strength=rand()%(300-(players[numplayers].magicskills+players[numplayers].smartness+players[numplayers].luck));
+			players[numplayers].dexterity=rand()%(300-(players[numplayers].magicskills+players[numplayers].smartness+players[numplayers].luck+players[numplayers].strength));
+		}
    	}
  	printf("Enter the number of slots you want to play with:\n");
 	int slotamount=0;
