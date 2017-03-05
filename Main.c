@@ -53,7 +53,7 @@ int main(void)
  	printf("Enter the number of slots you want to play with:\n");
 	int slotamount=0;
 	scanf("%d",&slotamount);
-	int arr={100,101,102,103,104,105}; int i=0; int flag=0;
+	int arr={100,101,102,103,104,105}; int i=0; int flag=0; int b=0;
 	while(i<input)
 	{       
 		int v=rand()%slotamount;
@@ -76,6 +76,18 @@ int main(void)
 	{
 		for(int l=(players[f].assignedslotnumber)-1;l<=(players[j].assignedslotnumber)+1;l++)
 		{
+			for(int j=0;j<input;j++)
+			{
+				if(players[j].assignedslotnumber==l)
+				{
+					b++;
+				}
+			}
+		}
+	        if(b==0)
+		{	if(players[f].assignedslotnumber!=0)
+			{
+				printf("Press 0 to go backward and 1 to go forward or 2 to attack closest player\n"); 
 			
 		
 	
